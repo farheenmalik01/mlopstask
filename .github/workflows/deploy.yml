@@ -1,4 +1,3 @@
-# .github/workflows/deploy.yml
 name: Deploy to Vercel
 
 on:
@@ -8,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Changed to use Windows
 
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv venv
-        source venv/bin/activate
+        .\venv\Scripts\activate
         pip install -r requirements.txt
 
     - name: Deploy to Vercel
