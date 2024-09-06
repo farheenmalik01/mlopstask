@@ -1,11 +1,9 @@
-# app.py
 from flask import Flask, request, jsonify, render_template
 import joblib
 import numpy as np
 
 app = Flask(__name__)
 
-# Load the trained model
 model = joblib.load('model.pkl')
 
 @app.route('/')
